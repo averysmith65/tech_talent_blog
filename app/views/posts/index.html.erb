@@ -16,6 +16,8 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
+        <td> <p>by <em><%= link_to post.user.username, user_posts_path(id: post.user_id) %></em></p>
+        </td>
         <td><%= post.user.username %></td>
         <td><%= post.blog_entry.html_safe %></td>
         <td><%= link_to 'Show', post, :class => 'btn btn-primary' %></td>

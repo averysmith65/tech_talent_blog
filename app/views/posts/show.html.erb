@@ -19,7 +19,9 @@
 
     <% @post.comments.each do |comment| %>
         <p>
-	    <%= comment.author %> said...<br />
+	    <p>
+        <%= link_to comment.user.username, user_posts_path(id: comment.user_id) %> said...
+      </p>
 	    <%= comment.comment_entry %>
 	</p>
     <% end %>
